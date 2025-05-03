@@ -134,8 +134,21 @@
 		<ul>
 			<li><a href="https://discord.gg/XGDxuug4tS">Discord</a></li>
 			<li><a href="https://docs.google.com/document/d/1qnp7ImbGkI5cGY_uQmZHjkwNA4ClNZGxISxTaHm7xiU/edit?usp=sharing">Server Rules</a></li>
-			<li><a href="#">Apply</a></li>
-            <li><a href="#">Store</a></li>
+			<li><a href="#">Store</a></li>
+
+			<li class="relative">
+				<button onclick="toggleDropdown()" id="departmentsButton" class="text-white font-medium hover:text-blue-400 focus:outline-none">
+				  Departments <i class="fa fa-caret-down ml-1"></i>
+				</button>
+				<ul id="departmentsDropdown" class="absolute left-0 mt-2 bg-gray-900 text-white rounded shadow-lg hidden min-w-[300px] z-50 flex flex-col">
+					<li><a href="./civilian.html" class="block px-4 py-2 hover:bg-blue-500 hover:text-white">Civilian</a></li>
+				  <li><a href="./lspd.html" class="block px-4 py-2 hover:bg-blue-500 hover:text-white">LSPD</a></li>
+				  <li><a href="#" class="block px-4 py-2 hover:bg-blue-500 hover:text-white">LSFD</a></li>
+				  <li><a href="#" class="block px-4 py-2 hover:bg-blue-500 hover:text-white">Sheriff</a></li>
+				</ul>
+			  </li>
+			  
+
 
 		</ul>
 	</nav>
@@ -289,7 +302,7 @@
 		  </div>
 		  <!-- Taxi -->
 		  <div class="bg-gray-900 p-6 rounded shadow-lg">
-			<h3 class="text-xl font-bold text-yellow-300 mb-2">🚕 Taxi</h3>
+			<h3 class="text-xl font-bold text-yellow-300 mb-2"> </h3>
 			<p class="text-gray-300">Become a taxi driver and explore the State of San Andreas</p>
 		  </div>
 		</div>
@@ -391,6 +404,26 @@
 		window.onload = function () {
 			window.scrollTo(0, 0);
 		};
+		
 	</script>
+<script>
+	function toggleDropdown() {
+	  const dropdown = document.getElementById("departmentsDropdown");
+	  dropdown.classList.toggle("hidden");
+	}
+  
+	// Close the dropdown if clicked outside
+	document.addEventListener("click", function (event) {
+	  const dropdown = document.getElementById("departmentsDropdown");
+	  const button = document.getElementById("departmentsButton");
+  
+	  // If the clicked target is not the button or inside the dropdown
+	  if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+		dropdown.classList.add("hidden");
+	  }
+	});
+  </script>
+
+  
 </body>
 </html>
